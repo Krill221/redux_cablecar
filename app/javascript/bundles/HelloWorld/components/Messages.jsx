@@ -3,7 +3,7 @@ import Message from './Message';
 
 
 const Messages = ({items}) => {
-  return <table><tbody>
+  return <table className="table"><tbody>
       {
          items.map(item => <Message key={item.id} {...item}/>)
       }
