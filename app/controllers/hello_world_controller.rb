@@ -9,7 +9,7 @@ class HelloWorldController < ApplicationController
 
 
   def add
-    sleep 1
+    #sleep 1
     @hello_world_props = { name: params[:text] }
     render json: @hello_world_props
   end

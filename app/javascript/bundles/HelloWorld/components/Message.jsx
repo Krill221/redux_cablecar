@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 
-const Add = ({ name }) => {
-  let input
-  return <h3> Hello, {name}!</h3>
+const Message = (item) => {
+  return <tr>
+    <td>{item.id}</td>
+    <td>{item.text}</td>
+    <td>{item.created_at}</td>
+    <td>{item.updated_at}</td>
+  </tr>
 }
-
-
-export default Add;
+export default Message;

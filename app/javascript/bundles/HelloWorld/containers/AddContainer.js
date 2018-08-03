@@ -2,12 +2,18 @@
 
 import { connect } from 'react-redux';
 import Add from '../components/Add';
-import * as actions from '../actions/helloWorldActionCreators';
+import * as actions from '../actions/nameCreators';
 
-// Which part of the Redux global state does our component want to receive as props?
-const mapStateToProps = (state) => ({ name: state.name });
 
-// Don't forget to actually use connect!
-// Note that we don't export HelloWorld, but the redux "connected" version of it.
-// See https://github.com/reactjs/react-redux/blob/master/docs/api.md#examples
-export default connect(null, actions)(Add);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        allModel: () => dispatch(actions.allModel()),
+        addModel: (text) => dispatch(actions.addModel(text)),
+        updateModel: (text) => dispatch(actions.updateModel(text)),
+        deleteModel: (text) => dispatch(actions.deleteModel(text)),
+        deleteAllModel: (text) => dispatch(actions.deleteAllModel(text))
+    };
+};
+
+
+export default connect(null, mapDispatchToProps)(Add);

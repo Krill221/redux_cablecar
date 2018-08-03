@@ -1,14 +1,16 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import rootReduser from '../reducers';
+import cablecar from 'redux-cablecar';
 
-import helloWorldReducer from '../reducers/helloWorldReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const configureStore = (railsProps) => (
-  createStore(helloWorldReducer, railsProps,  composeEnhancers(
-    applyMiddleware( thunk )
-  )
-)
-);
+const store = createStore(rootReduser,  composeEnhancers(
+  applyMiddleware( thunk, cablecar )
+))
 
-export default configureStore;
+const options = {
+  prefix: 'CABLE'
+}
+export const car = cablecar.connect(store, 'ChatChannel', options);
+export default store;

@@ -1,0 +1,11 @@
+export const CABLE_ALL = 'CABLE_ALL'
+export const CABLE_ADD = 'CABLE_ADD'
+export const CABLE_UPDATE = 'CABLE_UPDATE'
+export const CABLE_DELETE = 'CABLE_DELETE'
+export const CABLE_DELETE_ALL = 'CABLE_DELETE_ALL'
+
+export const SERVER_ALL = 'SERVER_ALL'
+export const SERVER_ADD = 'SERVER_ADD'
+export const SERVER_UPDATE = 'SERVER_UPDATE'
+export const SERVER_DELETE = 'SERVER_DELETE'
+export const SERVER_DELETE_ALL = 'SERVER_DELETE_ALL'

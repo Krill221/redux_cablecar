@@ -1,13 +1,16 @@
-import React, { Fragment } from 'react';
+import React, {Component, Fragment } from 'react';
 import AddContainer from '../containers/AddContainer';
-import MessageContainer from '../containers/MessageContainer';
+import MessagesContainer from '../containers/MessagesContainer';
 
-const Group = () => {
-  let input
-  return <Fragment>
-    <AddContainer/>
-    <MessageContainer/>
-  </Fragment>
+class Group extends Component {
+  componentDidMount(){
+  }
+  render() {
+    let input
+    return <Fragment>
+      <AddContainer/>
+      <MessagesContainer/>
+    </Fragment>
+  }
 }
-
 export default Group;
