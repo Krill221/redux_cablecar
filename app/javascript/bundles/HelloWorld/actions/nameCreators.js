@@ -13,18 +13,18 @@ export const addModel = (text) => {
     dispatch({ channel: 'ChatChannel', type: CABLE_ADD, text: text });
   }
 };
-export const updateModel = (text) => {
+export const updateModel = (id, text) => {
   return (dispatch) => {
-    dispatch({ channel: 'ChatChannel', type: CABLE_UPDATE, text: text });
+    dispatch({ channel: 'ChatChannel', type: CABLE_UPDATE, id: id, text: text });
   }
 };
-export const deleteModel = (text) => {
+export const deleteModel = (id) => {
   return (dispatch) => {
-    dispatch({ channel: 'ChatChannel', type: CABLE_DELETE, text: text });
+    dispatch({ channel: 'ChatChannel', type: CABLE_DELETE, id: id });
   }
 };
-export const deleteAllModel = (text) => {
+export const deleteAllModel = () => {
   return (dispatch) => {
-    dispatch({ channel: 'ChatChannel', type: CABLE_DELETE_ALL, text: text });
+    dispatch({ channel: 'ChatChannel', type: CABLE_DELETE_ALL });
   }
 };

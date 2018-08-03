@@ -26,11 +26,11 @@ class ChatChannel < ApplicationCable::Channel
           action[:type] = 'SERVER_UPDATE'
           rebroadcast(action)
       when "CABLE_DELETE"
-          #msg = Message.create(name: current_user, msg: action['msg'])
+          Message.find(action['id']).destroy
           action[:type] = 'SERVER_DELETE'
           rebroadcast(action)
       when "CABLE_DELETE_ALL"
-          #msg = Message.create(name: current_user, msg: action['msg'])
+          Message.destroy_all
           action[:type] = 'SERVER_DELETE_ALL'
           rebroadcast(action)
     end

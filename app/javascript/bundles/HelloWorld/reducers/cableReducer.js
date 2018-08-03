@@ -36,13 +36,10 @@ export default (state = initialState, action) => {
       console.log(action.type)
       return state
     case SERVER_DELETE:
-      console.log(action.type)
-      return state
+      let f_items = state.items.filter( item => item.id != action.id )
+      return {...state, items: f_items }
     case SERVER_DELETE_ALL:
-      console.log(action.type)
-      return state
-
-
+      return {...state, items: [] }
     default:
       return state
   }

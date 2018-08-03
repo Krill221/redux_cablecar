@@ -9,9 +9,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         allModel: () => dispatch(actions.allModel()),
         addModel: (text) => dispatch(actions.addModel(text)),
-        updateModel: (text) => dispatch(actions.updateModel(text)),
-        deleteModel: (text) => dispatch(actions.deleteModel(text)),
-        deleteAllModel: (text) => dispatch(actions.deleteAllModel(text))
+        deleteAllModel: () => dispatch(actions.deleteAllModel())
     };
 };
 
