@@ -1,7 +1,7 @@
 module ApplicationCable
   class Channel < ActionCable::Channel::Base
 
-    @@model = "chat_room"
+    @@model = "default_room"
     @@broadcast = true
 
     def subscribed
