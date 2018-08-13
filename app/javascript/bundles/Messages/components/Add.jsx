@@ -12,7 +12,6 @@ const Add = (params) => {
         ref={el => input = el}
       />
     <span className="input-group-btn">
-        <Button onClick={() => params.allModel() } >ALL</Button>
         <Button onClick={() => params.addModel(input.value) } >ADD</Button>
         <Button onClick={() => params.deleteAllModel() } >DELETE ALL</Button>
     </span>

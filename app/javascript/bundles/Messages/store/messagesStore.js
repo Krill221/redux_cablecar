@@ -12,5 +12,5 @@ const store = createStore(rootReduser,  composeEnhancers(
 const options = {
   prefix: 'CABLE'
 }
-export const car = cablecar.connect(store, 'ChatChannel', options);
+export const car = cablecar.connect(store, 'MessagesChannel', options);
 export default store;

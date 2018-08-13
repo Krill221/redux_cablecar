@@ -1,8 +1,9 @@
-class ChatChannel < ApplicationCable::Channel
+class MessagesChannel < ApplicationCable::Channel
 
 
   def subscribed
     stream_from "chat_room"
+    self.transmit_all()
   end
 
 
@@ -12,18 +13,14 @@ class ChatChannel < ApplicationCable::Channel
 
     case action["type"]
       when "CABLE_ALL"
-          msg = Message.all
-          action[:type] = 'SERVER_ALL'
-          action[:items] = msg.as_json
-          transmit(action)
+          self.transmit_all()
       when "CABLE_ADD"
           new_msg = Message.create(text: action['text'])
-          action[:type] = 'SERVER_ADD'
-          action[:item] = new_msg.as_json
+          action = {:type => 'SERVER_ADD', :item => new_msg.as_json}
           rebroadcast(action)
       when "CABLE_UPDATE"
-          #msg = Message.create(name: current_user, msg: action['msg'])
-          action[:type] = 'SERVER_UPDATE'
+          msg = Message.update(action['id'].to_i, text: action['text'])
+          action = {:type => 'SERVER_UPDATE', :item => msg.as_json}
           rebroadcast(action)
       when "CABLE_DELETE"
           Message.find(action['id']).destroy
@@ -34,12 +31,15 @@ class ChatChannel < ApplicationCable::Channel
           action[:type] = 'SERVER_DELETE_ALL'
           rebroadcast(action)
     end
-
-
   end
 
+  def transmit_all
+      msg = Message.all
+      action = {:type => 'SERVER_ALL', :items => msg.as_json}
+      transmit(action)
+  end
   def rebroadcast(action)
-    ActionCable.server.broadcast("chat_room", action)
+      ActionCable.server.broadcast("chat_room", action)
   end
 
 end

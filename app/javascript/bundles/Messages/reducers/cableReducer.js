@@ -28,13 +28,18 @@ export default (state = initialState, action) => {
 
     case SERVER_ALL:
       return {...state, items: action.items }
+
     case SERVER_ADD:
       let items = state.items.slice()
       items.push(action.item)
       return {...state, items: items }
+
     case SERVER_UPDATE:
-      console.log(action.type)
-      return state
+      let m_items = state.items.map( (item) => {
+        if(item.id != action.item.id) return item;
+        return {...item, ...action.item}
+      })
+      return {...state, items: m_items }
     case SERVER_DELETE:
       let f_items = state.items.filter( item => item.id != action.id )
       return {...state, items: f_items }

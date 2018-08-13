@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 //import cablecar from 'redux-cablecar';
 
 
-import store, {car} from '../store/helloWorldStore';
+import store, {car} from '../store/messagesStore';
 import AddContainer from '../containers/AddContainer';
 import Group from '../components/Group';
 

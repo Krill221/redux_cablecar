@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App1</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <title>ReactOnRailsWithWebpacker</title>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= csrf_meta_tags %>
+    <%= javascript_pack_tag 'messages-bundle' %>
   </head>
 
   <body>

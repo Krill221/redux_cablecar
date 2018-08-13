@@ -2,12 +2,11 @@
 
 import { connect } from 'react-redux';
 import Add from '../components/Add';
-import * as actions from '../actions/nameCreators';
+import * as actions from '../actions/actionCreators';
 
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        allModel: () => dispatch(actions.allModel()),
         addModel: (text) => dispatch(actions.addModel(text)),
         deleteAllModel: () => dispatch(actions.deleteAllModel())
     };
