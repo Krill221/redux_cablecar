@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+REACT + REDUX + CABLECAR + REACT ON RAILS + RAILS
 
-Things you may want to cover:
+REACT <-> WS <-> RAILS
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Simple rails app with react that use WS to operate with data
+JUST IN TIME UPDATE DATA TO ALL CLIENTS (like in chats)
